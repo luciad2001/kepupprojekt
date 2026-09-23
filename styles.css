@@ -145,12 +145,20 @@ main h2:not(:first-child) {
 }
 
 h3 {
-  text-align: center;
+  text-align: left;
   color: var(--color-primary);
   font-weight: 700;
-  font-size: clamp(35px, 2.4vw, 25px);
+  font-size: clamp(50px, 2.4vw, 25px);
   color: var(--color-primary-dark);
+  
+}
 
+.split-text h3 {
+  margin-bottom: 2px;
+}
+
+.split-text h3 + h2 {
+  margin-top: 0;
 }
 
 main a {
@@ -202,9 +210,9 @@ main ul {
   flex-direction: row-reverse;
 }
 
-.content-split.image-left .split-image img {
-  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 22%, black 100%);
-          mask-image: linear-gradient(to left, transparent 0%, black 22%, black 100%);
+.content-split .split-image.no-fade img {
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 
 /* Na mobile sa fade vypne (obrázky sú pod sebou, fade by vyzeral zvláštne) */
@@ -214,7 +222,7 @@ main ul {
   }
 
   .content-split .split-image img,
-  .content-split.image-left .split-image img {
+  .content-split .split-image.no-fade img {
     -webkit-mask-image: none;
             mask-image: none;
   }
