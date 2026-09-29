@@ -11,7 +11,7 @@
   --color-border: #e3e7ee;
 
 
-  --font-main: "Helvetica", Arial, sans-serif;
+  --font-main: "Source Sans Pro", Arial, sans-serif;
 
   /* --- Rozostupy / tvary --- */
   --radius: 10px;
@@ -234,6 +234,64 @@ main td .meta {
 main td.num {
   text-align: center;
   white-space: nowrap;
+}
+
+/* =========================
+   ZOZNAM UČEBNÍC (klikateľný blok s obálkou)
+   ========================= */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.6em 0;
+}
+ 
+.book-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 36px);
+  padding: 16px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+ 
+.book-item:hover,
+.book-item:focus {
+  background-color: #eeeeee;
+}
+ 
+.book-cover {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 171px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+ 
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.book-info {
+  flex: 1 1 auto;
+}
+ 
+.book-title {
+  color: var(--color-primary);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+ 
+.book-author {
+  color: var(--color-text-muted);
+  font-size: 0.95em;
 }
 
 /* =========================
